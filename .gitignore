@@ -21,3 +21,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+src/services/Auth.js
+src/pages/loginPage.js
+src/pages/ListarPage.js
+src/pages/Cadastro.js
+src/routes/index.js
+src/pages/loginPage.js
+src/pages/ListarPage.js
+src/pages/Cadastro.js
