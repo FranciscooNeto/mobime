@@ -91,7 +91,7 @@ import {
                 w={'100%'}
                 h={'100%'}
                 src={
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd3nUJaYHBqQCX6H8qSQEVL5yi_gwnDnvT4Q&usqp=CAU'
+                  '/web/static/media/bg-col-login.1aac8725.png'
                 }
               />
             </Box>

@@ -16,9 +16,11 @@ import {
   Select,
   Spinner,
   Center,
-} from "@chakra-ui/react";
+ } from "@chakra-ui/react";
 
 import { AiOutlineSearch } from "react-icons/ai";
+
+
 
 const Listagem = () => {
   const [DataType, setDataType] = useState(2);
@@ -76,7 +78,7 @@ const Listagem = () => {
             <Input
               variant="solid"
               type="tel"
-              placeholder="Pesquise a escola"
+              placeholder="Pesquisar escola"
               value={searchValue}
               onChange={handleSearch}
             />
@@ -98,7 +100,7 @@ const Listagem = () => {
               </FormLabel>
 
               <Select
-                name="options"
+                name="select"
                 variant="solid"
                 size="md"
                 onChange={handleType}
@@ -166,13 +168,9 @@ const Listagem = () => {
                             estado={estado}
                             regiao={regiao}
                             situacaoFuncionamento={situacaoFuncionamento}
-                            dependenciaAdministrativa={
-                              dependenciaAdministrativa
-                            }
+                            dependenciaAdministrativa={dependenciaAdministrativa}
                             situacaoFuncionamentoTxt={situacaoFuncionamentoTxt}
-                            dependenciaAdministrativaTxt={
-                              dependenciaAdministrativaTxt
-                            }
+                            dependenciaAdministrativaTxt={dependenciaAdministrativaTxt}
                           />
                         );
                       }
@@ -192,8 +190,12 @@ const Listagem = () => {
                   color="black.500"
                   size="xl"
                 />
+                
               </Stack>
+              
             )}
+            
+           
           </Center>
         </Stack>
       </Flex>

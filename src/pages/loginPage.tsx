@@ -8,7 +8,8 @@ import {
     Button,
     useColorModeValue,
     Heading,
-    Text
+    Text,
+    
    
     
   } from '@chakra-ui/react';
@@ -35,7 +36,7 @@ export default function LoginPage() {
         users.forEach((user) => {
           const { username, password } = user;
           if((username===inputUser)&&(password===inputPassword)){
-              login('dcdcssc');
+              login();
               navigate('/listar');
           }
         setError(true)
@@ -54,7 +55,8 @@ export default function LoginPage() {
           <Heading fontSize={'4xl'} textAlign={'center'}>
             Mobi-ME
           </Heading>
-          </Stack>
+           
+          </Stack>  
           
           <form >
           <Box
@@ -74,7 +76,7 @@ export default function LoginPage() {
              
               <Stack spacing={10}>
                 
-                <Button onClick={handleSubmit}
+                <Button  onClick={handleSubmit}
                   bg={'blue.400'}
                   color={'white'}
                   _hover={{
