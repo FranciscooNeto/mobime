@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 
 const Cadastro = () => {
-    const [input_school, setInputSchool] = useState('')
+    const [input_escola, setInputSchool] = useState('')
     const [input_principal, setInputPrincipal] = useState('')
     const [success, setData] = useState(false)
     const [location, setLocation] = useState(0)
@@ -32,7 +32,7 @@ const Cadastro = () => {
 
     const handleSubmit = (e) => {
       const escola = {
-        escola: input_school,
+        escola: input_escola,
         diretor: input_principal,
         localizacao: location,
         turnos: checkedTurnosIds
@@ -77,7 +77,6 @@ const Cadastro = () => {
       <Navbar/>
       
     <Flex
-      flexDirection="column"
       width="100%"
       height="100%"
       backgroundColor="gray.100"
@@ -92,24 +91,24 @@ const Cadastro = () => {
     justifyContent="center"
     alignItems="center">
         
-        <Box minW={{base: "90%", md: "468px"}}>
+        <Box minW={{base: "100%", md: "100%"}}>
             
           <form onSubmit={handleSubmit}>
             <Stack
-              spacing={4}
-              p="1rem"
+              spacing={8}
+              p="2rem"
               backgroundColor="whiteAlpha.900"
-              boxShadow="md"
-              borderRadius='5px'
+              boxShadow="lg"
+              borderRadius='50px'
             >
-            <FormControl isRequired={!(input_school)}>
+            <FormControl isRequired={!(input_escola)}>
                 <FormLabel htmlFor='name'>Nome da escola</FormLabel>
                 <Input
                     id='name_school'
                     type='name'
-                    value={input_school}
+                    value={input_escola}
                     onChange={handleInputChangeSchool}
-                    placeholder='Ex: Unidade Escolar Professor Darcy Araújo'
+                  
                 />
             </FormControl>
             <FormControl>
@@ -119,27 +118,27 @@ const Cadastro = () => {
                     type='name'
                     value={input_principal}
                     onChange={handleInputChangePrincipal}
-                    placeholder='Ex: Renato Félix'
+                    
                 />
                 
             </FormControl>
             <FormControl isRequired={(location === 0)}>
                 <FormLabel htmlFor='name'>Localização da escola</FormLabel>
-                <RadioGroup onChange={setLocation} value={location}>
-                  <Stack spacing={[1, 4]} 
-                  direction={['column', 'row']} 
+                <RadioGroup direction onChange={setLocation} value={location}>
+                  <Stack spacing={[2, 4]} 
+                  direction={['row']} 
                   >
-                    <Radio value='1'>Urbano</Radio>
-                    <Radio value='2'>Rural</Radio>
+                    <Radio value='Urbano'>Urbano</Radio>
+                    <Radio value='Rural'>Rural</Radio>
                   </Stack>
               </RadioGroup>
             </FormControl>
             
             <FormControl isRequired={!(checkedTurnosIds.length)}>
-            <FormLabel>Turnos</FormLabel>
+            <FormLabel>Turno</FormLabel>
             
             <Stack spacing={[1, 4]} 
-            direction={['column', 'row']} 
+            direction={['row']} 
             >
                 <CheckboxGroup>
                     <Checkbox onChange={checkboxes[0] === -1 ? PushArray : PopArray} value='M' id='0'>Manhã</Checkbox>
@@ -156,7 +155,7 @@ const Cadastro = () => {
             borderRadius={0}
             type="submit"
             variant="solid"
-            colorScheme="blue"
+            colorScheme="gray"
             width="full"
             >
             Cadastrar

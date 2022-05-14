@@ -29,3 +29,5 @@ src/routes/index.js
 src/pages/loginPage.js
 src/pages/ListarPage.js
 src/pages/Cadastro.js
+src/pages/SobrePage.tsx
+src/components/Card.jsx

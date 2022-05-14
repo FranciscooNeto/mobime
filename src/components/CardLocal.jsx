@@ -24,30 +24,30 @@ function Card(props) {
         rounded={"md"}
         overflow={"hidden"}
       >
-        <Stack H={{ base: "sm", large: "md" }} W={{ base: "sm", large: "md" }}>
+        <Stack spacing={2} H={{ base: "sm", large: "md" }} W={{ base: "sm", large: "md" }}>
           <Heading
             color={useColorModeValue("gray.700", "white")}
             fontSize={"1.2rem"}
             fontFamily={"body"}
-            minH={"4.5rem"}
+            minH={"4rem"}
             noOfLines={3}
             textTransform="uppercase"
             textAlign={"center"}
           >
             Escola: {nome}
-          </Heading>
-          <Text color={"black.500"} noOfLines={1} >
+          </Heading> 
+          <Text align={'center'} color={"black.500"} noOfLines={2}>
             Diretor(a): {diretor}
           </Text>
         </Stack>
-        <Stack  direction={"row"} spacing={4} >
-          <Stack direction={"column"} spacing={0} fontSize={"md"}>
-            <Text  fontWeight={400} noOfLines={1}>
-              Localização {localizacao}
+        <Stack textAlign={'center'}  >
+          <Stack align={'center'} spacing={1} fontSize={"md"}>
+            <Text alignItems={'center'} fontWeight={400} noOfLines={1}>
+              Localização: {localizacao}
             </Text>
             <Text color={"black.500"}>
               Turnos:{" "}
-              <Stack direction={"row"}>
+              <Stack >
                 {turnos.map((turno) => (
                   <Text color={"gray.500"}>{turno}</Text>
                 ))}

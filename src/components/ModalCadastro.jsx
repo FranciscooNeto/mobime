@@ -22,10 +22,10 @@ const ModalCadastro = () => {
       <Modal isOpen={onOpen} onClose={reload}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Sucesso!</ModalHeader>
+          <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>Cadastro realizado com sucesso.</Text>
+            <Text>Cadastro realizado.</Text>
           </ModalBody>
           <ModalFooter justifyContent={"center"}></ModalFooter>
         </ModalContent>

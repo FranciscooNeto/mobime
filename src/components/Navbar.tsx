@@ -16,7 +16,6 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
-
 import { logout } from "../contexts/Auth";
 import React from "react";
 
@@ -73,10 +72,11 @@ export default function Navbar() {
           spacing={6}
         >
           <Button
-            onClick={handleLogout}
-            fontWeight={1000}
-            color={"black"}
-            bg={"white.100"}
+            onClick={handleLogout}     
+            height='20px'
+            width='70px'
+            border='20px'
+          
           >
             <a href="/login">Deslogar</a>
           </Button>

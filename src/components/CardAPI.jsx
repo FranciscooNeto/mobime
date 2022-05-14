@@ -20,45 +20,46 @@ function CardAPI(props) {
 
   return (
     <Center
-      py={4}
+      py={1}
       W={{ base: "sm", large: "md" }}
       H={{ base: "sm", large: "md" }}
     >
       <Box
         minW={"100%"}
-        p={8}
+        p={3}
         bg={useColorModeValue("white", "gray.900")}
         rounded={"md"}
         overflow={"hidden"}
       >
         <Stack H={{ base: "sm", large: "md" }} W={{ base: "sm", large: "md" }}>
           <Heading
-            color={useColorModeValue("black.700", "white")}
+            color={useColorModeValue("gray.700", "white")}
             fontSize={"1.2rem"}
             fontFamily={"body"}
-            minH={"4.5rem"}
-            noOfLines={3}
+            minH={"8rem"}
+            noOfLines={8}
+            textTransform="uppercase"
             textAlign={"center"}
           >
-            {nome}
+           Escola: {nome}
           </Heading>
-          <Text color={"black.500"} noOfLines={1}>
+          <Text align={'center'} color={"black.500"} noOfLines={2}>
             Situação: {situacaoFuncionamentoTxt}
           </Text>
-          <Stack direction={"row"} spacing={4} align={"center"}>
+          <Stack spacing={4} align={"center"}>
             <Stack
               align={"center"}
               direction={"column"}
               spacing={4}
               fontSize={"sm"}
             >
-              <Text color={"black.500"} noOfLines={1}>
+              <Text color={"black.500"} noOfLines={2}>
                 Localização: {cidade} - {estado}
               </Text>
-              <Text color={"black.500"} noOfLines={1}>
+              <Text color={"black.500"} noOfLines={2}>
                 Administração: {dependenciaAdministrativaTxt}
               </Text>
-              <Text color={"black.500"} noOfLines={1}>
+              <Text color={"black.500"} noOfLines={2}>
                 Região: {regiao}
               </Text>
             </Stack>

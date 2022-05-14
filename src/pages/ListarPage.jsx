@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "../services/axios";
 import CardAPI from "../components/CardAPI";
-import Card from "../components/Card";
+import Card from "../components/CardLocal";
 import Navbar from "../components/Navbar.tsx";
 
 import {
@@ -28,11 +28,11 @@ const Listagem = () => {
     setDataType(parseInt(e.target.value));
   };
 
-  const [searchValue, SetInputValue] = useState("");
-  const [apiSchools, setSchools] = useState([]);
-  const [dataSchools, setDataSchool] = useState([]);
+  const [searchValue, setInputSearch] = useState("");
+  const [ApiEscolas, setEscolas] = useState([]);
+  const [escolas_data, setDataEscola] = useState([]);
 
-  const handleSearch = (e) => SetInputValue(e.target.value);
+  const handleSearch = (e) => setInputSearch(e.target.value);
 
   useEffect(() => {
     async function getSchools() {
@@ -41,14 +41,13 @@ const Listagem = () => {
       data = JSON.parse(data);
 
       if (data) {
-        setDataSchool(data);
+        setDataEscola(data);
       }
-
-      let route = `http://educacao.dadosabertosbr.com/api/escolas/buscaavancada?estado=pi`;
+      let rota = `http://educacao.dadosabertosbr.com/api/escolas/buscaavancada?estado=pi`;
 
       try {
-        const response = await axios.get(route);
-        setSchools(response.data[1]);
+        const response = await axios.get(rota);
+        setEscolas(response.data[1]);
         setLoaded(true);
       } catch (e) {
         setLoaded(true);
@@ -67,7 +66,7 @@ const Listagem = () => {
         backgroundColor="gray.200"
         alignItems="center"
       >
-        <Stack width="40wh" maxH={"50%"} minW={"25%"} >
+        <Stack width='100'>
           <InputGroup>
             <InputLeftElement
               pointerEvents="none"
@@ -111,13 +110,13 @@ const Listagem = () => {
           <Center w="100%">
             {Loaded ? (
               <SimpleGrid
-                columns={[1, 7]}
-                spacing="5px"
+                columns={[1, 6]}
+                spacing="10px"
                 maxH={"100%"}
-                maxW={"90%"}
+                maxW={"100%"}
               >
-                {DataType === 2 && dataSchools !== undefined
-                  ? dataSchools.map(function (data) {
+                {DataType === 2 && escolas_data !== undefined
+                  ? escolas_data.map(function (data) {
                       const { escola, diretor, localizacao, turnos } = data;
                       if (
                         escola
@@ -136,7 +135,7 @@ const Listagem = () => {
                       }
                       return <></>;
                     })
-                  : apiSchools.map(function (data) {
+                  : ApiEscolas.map(function (data) {
                       const {
                         nome,
                         anoCenso,
@@ -168,9 +167,7 @@ const Listagem = () => {
                             situacaoFuncionamento={situacaoFuncionamento}
                             dependenciaAdministrativa={dependenciaAdministrativa}
                             situacaoFuncionamentoTxt={situacaoFuncionamentoTxt}
-                            dependenciaAdministrativaTxt={
-                              dependenciaAdministrativaTxt
-                            }
+                            dependenciaAdministrativaTxt={dependenciaAdministrativaTxt}
                           />
                         );
                       }
@@ -180,11 +177,11 @@ const Listagem = () => {
             ) : (
               <Stack
                 mt={{ base: "6rem", md: "6rem" }}
-                mr={{ base: "0rem", md: "25rem" }}
+                mr={{ base: "0rem", md: "10rem" }}
               >
                 <Spinner
                   label="Carregando..."
-                  thickness="1px"
+                  thickness="2px"
                   speed="0.75s"
                   emptyColor="gray.200"
                   color="black.500"
