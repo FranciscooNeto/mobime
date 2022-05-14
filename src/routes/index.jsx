@@ -6,7 +6,7 @@ import ListarPage from "../pages/ListarPage.jsx";
 import SobrePage from "../pages/SobrePage.tsx";
 import CadastroPage from "../pages/CadastroPage.jsx";
 import PrivateRoute from "./privateRoute";
-import LoginRoute from './loginRoute';
+import LoginRoute from '../routes/loginRoute';
 import HomeRoute from "./HomeRoute";
 
 function RoutesM(){

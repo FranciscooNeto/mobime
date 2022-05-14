@@ -16,11 +16,9 @@ import {
   Select,
   Spinner,
   Center,
- } from "@chakra-ui/react";
+} from "@chakra-ui/react";
 
 import { AiOutlineSearch } from "react-icons/ai";
-
-
 
 const Listagem = () => {
   const [DataType, setDataType] = useState(2);
@@ -60,16 +58,16 @@ const Listagem = () => {
   }, []);
 
   return (
-    <Stack width="100wh" height="100vh" backgroundColor="blue.100">
+    <Stack width="100wh" height="100vh" backgroundColor="gray.200">
       <Navbar />
 
       <Flex
         flexDirection="column"
         width="100wh"
-        backgroundColor="blue.100"
+        backgroundColor="gray.200"
         alignItems="center"
       >
-        <Stack alignItems="right">
+        <Stack width="40wh" maxH={"50%"} minW={"25%"} >
           <InputGroup>
             <InputLeftElement
               pointerEvents="none"
@@ -78,7 +76,7 @@ const Listagem = () => {
             <Input
               variant="solid"
               type="tel"
-              placeholder="Pesquisar escola"
+              placeholder="Buscar escola"
               value={searchValue}
               onChange={handleSearch}
             />
@@ -89,14 +87,14 @@ const Listagem = () => {
           minWidth={"100%"}
           alignItems={{ base: "center", md: "flex-start" }}
         >
-          <Stack maxH={"50%"} minW={"20%"} mr={"2rem"} ml={"1.5rem"}>
+          <Stack maxH={"50%"} minW={"8%"} mr={"1rem"} ml={"1rem"}>
             <FormControl>
               <FormLabel
                 color="Black.600"
                 fontWeight="bold"
                 style={{ textTransform: "uppercase" }}
               >
-                TIPO
+                SELECIONAR
               </FormLabel>
 
               <Select
@@ -113,10 +111,10 @@ const Listagem = () => {
           <Center w="100%">
             {Loaded ? (
               <SimpleGrid
-                columns={[1, 3]}
-                spacing="10px"
+                columns={[1, 7]}
+                spacing="5px"
                 maxH={"100%"}
-                maxW={"70%"}
+                maxW={"90%"}
               >
                 {DataType === 2 && dataSchools !== undefined
                   ? dataSchools.map(function (data) {
@@ -170,7 +168,9 @@ const Listagem = () => {
                             situacaoFuncionamento={situacaoFuncionamento}
                             dependenciaAdministrativa={dependenciaAdministrativa}
                             situacaoFuncionamentoTxt={situacaoFuncionamentoTxt}
-                            dependenciaAdministrativaTxt={dependenciaAdministrativaTxt}
+                            dependenciaAdministrativaTxt={
+                              dependenciaAdministrativaTxt
+                            }
                           />
                         );
                       }
@@ -190,12 +190,8 @@ const Listagem = () => {
                   color="black.500"
                   size="xl"
                 />
-                
               </Stack>
-              
             )}
-            
-           
           </Center>
         </Stack>
       </Flex>
